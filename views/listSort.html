@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>listSort</title>
+    <link href="listSort.css" type="text/css" rel="stylesheet">
+</head>
+<body id="tbody">
+<div class="container" id="container">
+    <div class="top">
+        <ul>
+            <li class="sortBtn" title="按系统默认排序">默认</li>
+            <li class="sortBtn" title="按价格降序"><a href="/sort?mode=desc">价格</a></li>
+            <li class="sortBtn" title="按价格升序"><a href="/sort?mode=asc">价格</a></li>
+        </ul>
+    </div>
+    <div class="content" id="content">
+        {{each resultList}}
+        <div class="item">
+            <a href="#">
+                <div class="imgbox">
+                    <img src={{$value.IMG}} alt="">
+                </div>
+                <div class="priceInfo">
+                    <div class="price"><span>¥</span><strong>{{$value.PRICE}}</strong></div>
+                    <div class="deal">{{$value.SOLD}}人付款</div>
+                </div>
+                <div class="title">
+                    <a href="#">
+                        <span>{{$value.DESCRIBE}}</span>
+                    </a>
+                </div>
+                <div class="business">
+                    <div class="shop"><a href="#">{{$value.BUSINESS}}</a></div>
+                    <div class="location">{{$value.PROVINCE}} {{$value.CITY}}</div>
+                </div>
+            </a>
+        </div>
+        {{/each}}
+    </div>
+
+</div>
+<script src="jquery_3.4.1.js"></script>
+<script src="listSort.js"></script>
+</body>
+</html>
